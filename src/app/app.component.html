@@ -1,25 +1,23 @@
 <!-- <button routerLink="home" routerLinkActive="active-route" >Bienvenido</button>
 <button routerLink="aboutng" routerLinkActive="active-route"  >About</button> -->
-<div class="background">
-  @if(authService.currentUserSignal() != null)
-  {
-  <nav>
-    <ul>
-      <li>
-        <a routerLink="home" routerLinkActive="active-route">Home</a>
-      </li>
-      <li>
-        <a routerLink="about" routerLinkActive="active-route">About</a>
-      </li>
-      <li>
-        <a href="#">Contact</a>
-      </li>
-      <li>
-        <button (click)="logOut()" class="btn btn-dark">Log Out</button>
-      </li>
-    </ul>
-  </nav>
-  }
+@if(authService.currentUserSignal() != null)
+{
+<nav>
+  <ul>
+    <li>
+      <a routerLink="home" routerLinkActive="active-route">Home</a>
+    </li>
+    <li>
+      <a routerLink="about" routerLinkActive="active-route">About</a>
+    </li>
+    <li>
+      <a href="#">Contact</a>
+    </li>
+    <li>
+      <button (click)="logOut()" class="btn btn-dark">Log Out</button>
+    </li>
+  </ul>
+</nav>
+}
 
-  <router-outlet />
-</div>
+<router-outlet />

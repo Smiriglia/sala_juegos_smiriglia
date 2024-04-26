@@ -4,11 +4,6 @@
     color: rgb(255, 255, 255) !important;
 }
 
-.background {
-  height: 100vh;
-  width: 100vw;
-  background-image: linear-gradient(to right top, #8e44ad 0%, #3498db 100%);
-}
 
 nav {
   max-width: 960px;

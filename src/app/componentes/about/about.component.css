@@ -1,0 +1,306 @@
+.view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 900px; */
+  height: 700px;
+}
+
+.title {
+  font-family: 'Roboto Mono', 'Inconsolata';
+  color: rgb(126, 173, 255);
+  font-size: medium;
+}
+
+.basic-info .name {
+  font-family: "Montserrat", "Lato", "Open Sans";
+  color: rgba(0, 0, 0, 0.63);
+}
+
+.basic-info .description {
+  font-family: "Roboto", "Nunito", "Poppins";
+}
+
+.projects-title {
+  font-family: "Oswald", "Raleway", "Playfair Display";
+  font-size: large;
+  color: rgb(104, 0, 0);
+}
+
+.round-img {
+  border-radius: 100%;
+  border: 10px solid #FFFFFF;
+  display: inline;
+  width: 60%;
+  /* height: 100%; */
+}
+
+@media (min-width: 1200px) {
+  .round-img {
+    width: 70%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200.98px) {
+  .round-img {
+    width: 100%;
+  }
+}
+
+.content {
+  width: 60%;
+  /* height: 90%; */
+
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+
+}
+
+.top-part {
+  height: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.mid-part {
+  height: 90%;
+}
+
+.total-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mid-part {
+  display: flex;
+  justify-content: center;
+}
+
+.container-slider {
+  width: 60%;
+}
+
+@media (min-width: 0.00px) and (max-width: 614.00px) {
+  .container-slider {
+    width: 100%;
+  }
+}
+
+@media (min-width: 614.00px) and (max-width: 880.00px) {
+  .container-slider {
+    width: 80%;
+  }
+}
+
+@media (min-width: 881.00px) and (max-width: 1400.00px) {
+  .container-slider {
+    width: 70%;
+  }
+}
+
+.slider {
+  overflow: auto;
+
+  display: flex;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+  border-radius: 0.5rem;
+  aspect-ratio: 16 / 9;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+.slide {
+  display: inline-block;
+  position: static;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.slider div img {
+  position: unset;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
+
+.slider-nav {
+  display: flex;
+  column-gap: 1rem;
+  position: relative;
+  bottom: 1.25rem;
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  z-index: 1;
+  width: 100%;
+  justify-content: center;
+}
+
+.slider-nav a {
+  width: 1.0rem;
+  height: 0.5rem;
+  border-radius: 10px;
+  background-color: gray;
+  opacity: 0.75;
+  transition: opacity ease 250ms;
+}
+
+.slider-nav .selected {
+  background-color: #FFFFFF !important;
+}
+
+.slider-nav a:hover {
+  opacity: 1;
+}
+
+.slide-content {
+  background-color: rgba(0, 0, 0, 0.2);
+  position: static;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  scroll-snap-align: start;
+}
+
+#slide-1 {
+  background: url('https://images.unsplash.com/photo-1656464868371-602be27fd4c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80');
+  background-size: cover;
+}
+
+#slide-2 {
+  background: url('https://images.unsplash.com/photo-1657586640569-4a3d4577328c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80');
+  background-size: cover;
+}
+
+#slide-3 {
+  background: url('https://images.unsplash.com/photo-1656077217715-bdaeb06bd01f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80');
+  background-size: cover;
+}
+
+
+
+.slide-content * {
+  color: #FFFFFF;
+}
+  
+.slide-info * {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.slide-info .container-repo {
+    display: inline-block;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    height: fit-content;
+    margin: 0;
+}
+
+.slide-info .container-repo * {
+  margin-left: 0;
+  font-family: "Roboto Condensed", "Oswald", "Raleway";
+}
+
+.slide-info .container-c {
+  font-family: "Nunito", "Poppins", "Quicksand";
+}
+
+.slide-info .bottom-part {
+  margin: 0;
+}
+
+.slide-info .description {
+  font-family: "Open Sans", "Roboto", or "Lato";
+}
+
+.slide-info .name {
+  margin-top: 10px;
+  font-family: "Playfair Display", "Montserrat", "Roboto Slab";
+}
+
+@media (min-width: 0.00px) and (max-width: 1500.00px) {
+  .slide-content {
+    font-size: 54%;
+  }
+  .slide-info .description {
+    display: none;
+  }
+  .slide-info .container-c {
+    width: 65%;
+    display: inline;
+  }
+  .slide-info .container-repo {
+    width: 35%;
+    border-left: solid black 2px;
+
+  }
+
+  .slide-info .bottom-part {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+@media (min-width: 0.00px) and (max-width: 480.00px) {
+  .slide-content {
+    font-size: 45%;
+  }
+  .slide-content .bottom-part .container-c p {
+    margin-bottom: 0;
+  }
+}
+
+
+@media (min-width: 760.00px) and (max-width: 1300.00px) {
+  .slide-content {
+    font-size: small;
+  }
+  .slide-content .bottom-part .container-c p {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1300.00px) and (max-width: 1500.00px) {
+  .slide-content {
+    font-size: medium;
+  }
+}
+
+@media (min-width: 1500.00px) and (max-width: 1700.00px) {
+  .slide-content {
+    font-size: small;
+  }
+}
+
+
+
+
+
+.slide-info{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+}
+.slide div {
+  width: 100%;
+}
+

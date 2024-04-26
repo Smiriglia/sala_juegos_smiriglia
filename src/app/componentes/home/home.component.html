@@ -1,1 +1,6 @@
-<H1>Hi {{username}}</H1>
+@if(authService.currentUserSignal() != null)
+{
+
+    <H1>Hi {{authService.currentUserSignal()!.username!}}</H1>
+    
+}

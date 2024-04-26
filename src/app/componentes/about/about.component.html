@@ -1,1 +1,116 @@
-<p>about works!</p>
+<div class="view">
+  <div class="content">
+    <div class="container">
+      <div class="row top-part">
+        <div class="col-md-4 col-sm-12">
+          <div class="total-center">
+            <img class="round-img " src="assets/about/foto_fausto.jpg" alt="foto_fausto">
+          </div>
+          <div class="total-center">
+            <p class="title">Developer</p>
+          </div>
+        </div>
+        <div class="basic-info col-md-8 col-sm-12 ">
+          <p class="name">Fausto Smiriglia</p>
+          <p class="description">Soy un estudiante de la TUP en UTN FRA y he sido ayudante de cátedra durante dos
+            cuatrimestres. Actualmente, trabajo en una startup de contenido audiovisual especializado en el aprendizaje
+            de idiomas. Mi experiencia y habilidad con el front-end son bastante limitadas, así que estoy emocionado por
+            aprender y voy a esforzarme al máximo durante esta cursada.</p>
+        </div>
+      </div>
+      <hr>
+
+      <div class="bottom-part">
+        <p class="total-center projects-title">Proyectos</p>
+        <div class="total-center">
+
+          <div class="container-slider">
+            <div class="slider-wrapper">
+              <div class="slider">
+                <div id="slide-1" class="slide">
+                  <div class="slide-content">
+                    <div class="slide-info">
+                      <p class="name">La Comanda</p>
+                      <p class="description">API rest, para manejar un sistema de pedidos en formato comanda, utilizando
+                        el patron de diseño
+                        MVC, y middlewares para garantizar la seguridad de los datos</p>
+                      <div class="bottom-part">
+                        <div class="container-c">
+                          <p>Caracteristicas</p>
+                          <ul>
+                            <li>Patron de diseño MVC</li>
+                            <li>API REST</li>
+                            <li>Sistema de Usuarios</li>
+                            <li>Sistema de Ordenes Completo</li>
+                          </ul>
+                        </div>
+                        <div class="container-repo">
+                          <a href="https://github.com/Smiriglia/LaComanda-SmirigliaFausto"><fa-icon
+                              [icon]="iconGitHub"></fa-icon>GitHub </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="slide-2" class="slide">
+                  <div class="slide-content">
+                    <div class="slide-info">
+                      <p class="name">Asset Management System</p>
+                      <p class="description">Sistema de manejo de archivos en la nube, con previsualizaciones, sistema
+                        de busqueda
+                        y filtrado a tiempo real siempre y cuando tengan permiso de la empresa</p>
+                      <div class="bottom-part">
+                        <div class="container-c">
+                          <p>Caracteristicas</p>
+                          <ul>
+                            <li>Sistema de Usuarios OAuth</li>
+                            <li>Subida y Bajada de archivos</li>
+                            <li>Filtrado dinamico</li>
+                            <li>Busqueda dinamica</li>
+                          </ul>
+                        </div>
+                        <div class="container-repo">
+                          <a href="https://github.com/Smiriglia/asset-management"><fa-icon
+                              [icon]="iconLock"></fa-icon>GitHub</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="slide-3" class="slide">
+                  <div class="slide-content">
+                    <div class="slide-info">
+                      <p class="name">Chat And Game</p>
+                      <p class="description">Aplicacion de videollamadas para Windows y MacOS, que permite jugar juegos
+                        simples en llamada y cooperativo, con cloud recording</p>
+                      <div class="bottom-part">
+                        <div class="container-c">
+                          <p>Caracteristicas</p>
+                          <ul>
+                            <li>Videollamadas a tiempo real</li>
+                            <li>Juegos Cooperativos</li>
+                            <li>Cloud Recording</li>
+                            <li>Multijugador Online</li>
+                          </ul>
+                        </div>
+                        <div class="container-repo">
+                          <a href="https://github.com/Smiriglia/LaComanda-SmirigliaFausto"><fa-icon
+                              [icon]="iconLock"></fa-icon>GitHub </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slider-nav">
+                <a (click)="changeSlide(1)" id="slide-1-nav" class="selected"></a>
+                <a (click)="changeSlide(2)" id="slide-2-nav"></a>
+                <a (click)="changeSlide(3)" id="slide-3-nav"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
