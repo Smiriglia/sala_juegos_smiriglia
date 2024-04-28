@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
 import { AuthService } from './services/auth.service';
+import { FirestoreService } from './services/firestore.service';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -16,7 +17,7 @@ export class AppComponent implements OnInit {
   }
 
   authService = inject(AuthService);
-
+  firestoreService = inject(FirestoreService);
   ngOnInit(): void {
     this.authService.user$.subscribe(
       (user) => {
@@ -26,6 +27,7 @@ export class AppComponent implements OnInit {
             email: user.email!,
             username: user.displayName!,
           });
+          this.firestoreService.RegisterLogin(user.email!);
           if(this.router.url == "/login")
           {
             this.goTo("home")

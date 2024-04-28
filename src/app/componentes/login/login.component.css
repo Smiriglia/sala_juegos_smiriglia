@@ -259,3 +259,30 @@ footer a {
     font-size: medium;
     margin: 2%;
 }
+
+.autofill-container {
+	display: flex;
+	justify-content: center;
+	/* flex-direction: column; */
+}
+
+.autofill-container {
+	width: 100%;
+}
+
+.autofill-container button {
+	margin-top: 2%;
+	padding-left: 5%;
+	padding-right:5%;
+}
+
+.autofill-container .btn-test{
+	background-color: #3c97bf;
+	border-color: #3c97bf;
+}
+
+.autofill-container .btn-admin{
+	background-color: #FF416C;
+	border-color: #FF416C;
+}
+

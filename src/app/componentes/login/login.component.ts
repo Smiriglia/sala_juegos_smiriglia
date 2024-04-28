@@ -4,6 +4,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faGoogle, faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { FirestoreService } from '../../services/firestore.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,6 @@ import { Router } from '@angular/router';
   imports: [
     FontAwesomeModule,
     FormsModule,
-    // AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
@@ -19,7 +19,6 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   authService = inject(AuthService);
   router = inject(Router);
-
 
 
   googleIcon = faGoogle;
@@ -49,6 +48,7 @@ export class LoginComponent {
 
   onSuccess()
   {
+    
     this.goTo("home");
   }
 
@@ -132,5 +132,15 @@ export class LoginComponent {
   goToSignIn() {
     var container = document.getElementById('container');
     container?.classList.remove("right-panel-active");
+  }
+
+  fillTest() {
+    this.usuarioSingIn.email = "test@gmail.com";
+    this.usuarioSingIn.password = "test123";
+  }
+
+  fillAdmin() {
+    this.usuarioSingIn.email = "admin@gmail.com";
+    this.usuarioSingIn.password = "test123";
   }
 }

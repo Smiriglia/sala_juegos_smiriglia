@@ -39,6 +39,10 @@
                 <input type="password" placeholder="Password" name="password" [(ngModel)]="usuarioSingIn.password" />
                 <a href="#">Forgot your password?</a>
                 <button (click)="singIn()">Sign In</button>
+                <div class="autofill-container">
+                    <button (click)="fillTest()" class="btn-test">test</button>
+                    <button (click)="fillAdmin()" class="btn-admin">admin</button>
+                </div>
             </form>
         </div>
         <div class="overlay-container">

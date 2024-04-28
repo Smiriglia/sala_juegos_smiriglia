@@ -5,6 +5,9 @@ import { routes } from './app.routes';
 import { provideFirebaseApp } from '@angular/fire/app';
 import { initializeApp } from 'firebase/app';
 import { environment } from '../environments/environment.development';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
+
 import { GoogleAuthProvider, getAuth, provideAuth } from '@angular/fire/auth';
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,6 +15,8 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom([
       provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
       provideAuth(() => getAuth()),
+      provideFirestore(() => getFirestore()), 
+      provideDatabase(() => getDatabase()),
     ]),
   ]
 };
