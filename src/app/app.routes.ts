@@ -20,6 +20,13 @@ export const routes: Routes = [
             x => x.AboutComponent
         )
     },
+
+    {
+        path: 'chat', loadComponent: () => import('./componentes/chat/chat.component').then(
+            x => x.ChatComponent
+        )
+    },
+
     {
         path: '**', loadComponent: () => import('./componentes/page-not-found/page-not-found.component').then(
             x => x.PageNotFoundComponent

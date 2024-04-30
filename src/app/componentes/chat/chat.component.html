@@ -1,0 +1,41 @@
+@if (authService.currentUserSignal())
+{
+    <div class="container-fluid h-100">
+        <div class="row justify-content-center h-100">
+            <div class="col-md-8 col-xl-6 chat">
+                <div class="card">
+                    <div class="card-header msg_head">
+                        <div class="d-flex bd-highlight">
+                            <div class="img_cont">
+                                <img src="assets/chat/chat.png"
+                                    class="rounded-circle user_img">
+                                <span class="online_icon"></span>
+                            </div>
+                            <div class="user_info">
+                                <span>Chat</span>
+                                <p>{{chatService.messagesSignal().length}} Messages</p>
+                            </div>
+                        </div>
+                        <span id="action_menu_btn"><i class="fas fa-ellipsis-v"></i></span>
+                    </div>
+                    <div class="card-body msg_card_body">
+                        @for (mensaje of chatService.messagesSignal(); track $index) {
+                            <app-mensaje [message]="mensaje"></app-mensaje>
+                        }
+                        <!-- <app-mensaje [mensaje]="'Hi, how are you samim?'" [sender]="otro" [time]="'8:40 AM, Today' "></app-mensaje>
+                        <app-mensaje [mensaje]="'Hi Khalid i am good tnx how about you?'" [sender]="yo" [time]="'8:55 AM, Today' "></app-mensaje> -->
+                        <div id="endOfChat"></div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="input-group">
+                            <textarea name="txt-message" class="form-control type_msg" placeholder="Type your message..." (keydown.enter)="send($event)" [(ngModel)]="texto" ></textarea>
+                            <div class="input-group-append">
+                                <div class="input-group-text send_btn" (click)="send($event)"><fa-icon [icon]="iconLocationArrow"></fa-icon></div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

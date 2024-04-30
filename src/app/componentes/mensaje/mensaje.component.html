@@ -1,0 +1,18 @@
+<div class="d-flex {{justify}} mb-4">
+    @if(!isSender)
+    {
+        <div class="img_cont_msg">
+            <img src="{{srcImage}}" class="rounded-circle user_img_msg">
+        </div>
+    }
+    <div class={{msgContainer}}>
+        {{message.texto}}
+        <span class={{msgTime}}>{{username}} - {{ message.fecha| dateDisplay }}</span>
+    </div>
+    @if (isSender)
+    {
+        <div class="img_cont_msg">
+            <img src="{{srcImage}}" class="rounded-circle user_img_msg">
+        </div>
+    }
+</div>

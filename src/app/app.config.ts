@@ -8,7 +8,8 @@ import { environment } from '../environments/environment.development';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 
-import { GoogleAuthProvider, getAuth, provideAuth } from '@angular/fire/auth';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { DatePipe } from '@angular/common';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
@@ -18,5 +19,6 @@ export const appConfig: ApplicationConfig = {
       provideFirestore(() => getFirestore()), 
       provideDatabase(() => getDatabase()),
     ]),
+    DatePipe
   ]
 };

@@ -3,10 +3,8 @@ import { Injectable, inject, signal } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, user } from '@angular/fire/auth';
 import { signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from '@firebase/auth';
 
-import firebase from 'firebase/compat/app';
 import { Observable, from } from 'rxjs';
 import { UserInterface } from '../interfaces/user.interface';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider } from '@firebase/auth';
 
 @Injectable({

@@ -1,10 +1,9 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faGoogle, faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGoogle, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { FirestoreService } from '../../services/firestore.service';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +21,6 @@ export class LoginComponent {
 
 
   googleIcon = faGoogle;
-  fbIcon = faFacebook;
   githubIcon = faGithub;
 
   usuarioSingIn = {
