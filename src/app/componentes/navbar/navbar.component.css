@@ -1,0 +1,87 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.active-route{
+    color: rgb(255, 255, 255) !important;
+}
+
+
+nav {
+  max-width: 960px;
+  /* height: 79px; */
+  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+nav ul {
+  height: 63px;
+  text-align: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+nav ul li {
+  display: inline-block;
+  height: 100%;
+  /* max-width: 100px;
+  max-height: 63px; */
+}
+
+.list-container {
+    /* height: 63px; */
+    /* display: flex;  */
+    /* align-items: center; */
+    height: 100%;
+    width: 83px;
+}
+
+nav ul div a {
+    height: 63px;
+    height: 100%;
+}
+nav ul div a div {
+    display: flex;
+    height: 63px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* nav ul li a div {
+    padding: 18px;
+} */
+nav ul li a {
+  /* height: 63px;
+  height: 100%; */
+  /* padding: 18px; */
+  cursor: pointer;
+  font-family: "Open Sans";
+  text-transform:uppercase;
+  color: rgba(0, 35, 122, 0.5);
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+}
+
+nav ul li a:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(0, 35, 122, 0.7);
+}
+
+
+.round-img {
+  border-radius: 100%;
+  border: 3px solid #FFFFFF;
+  display: inline;
+  justify-self: end;
+  height: 35%;
+  /* height: 5%; */
+  /* height: 100%; */
+}
+
+.profile-container {
+    height: 63px;
+    width: 100px;
+}

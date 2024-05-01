@@ -11,5 +11,4 @@ export class DateDisplayPipe implements PipeTransform {
   transform(value: Timestamp | undefined): string {
     return this.datePipe.transform(value?.toMillis(), 'd/M/yy, h:mm a', ) ?? '';
   }
-
 }

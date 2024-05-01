@@ -1,6 +1,26 @@
 @if(authService.currentUserSignal() != null)
 {
 
-    <H1>Hi {{authService.currentUserSignal()!.username!}}</H1>
-    
+    <!-- <H1>Hi {{authService.currentUserSignal()!.username!}}</H1> -->
+    <div class="container">
+        <div (click)="goTo('ahorcado')" class="card">
+            <img src="assets/home/ahorcado.jpg">
+            <div class="card__head">Ahorcado</div>
+        </div>
+        <div (click)="goTo('mayor_menor')" class="card">
+            <img
+                src="assets/home/mayor_menor.png">
+            <div class="card__head">Mayor o Menor</div>
+        </div>
+        <div (click)="goTo('preguntados')" class="card">
+            <img
+                src="assets/home/preguntados.jpg">
+            <div class="card__head">Preguntados</div>
+        </div>
+        <div (click)="goTo('generala')" class="card">
+            <img
+                src="assets/home/generala.jpg">
+            <div class="card__head">Generala</div>
+        </div>
+    </div>
 }

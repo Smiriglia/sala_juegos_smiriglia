@@ -1,0 +1,61 @@
+@if(authService.currentUserSignal() != null)
+{
+<nav>
+    <ul>
+        <li>
+            <div class="list-container">
+                <a routerLink="home" routerLinkActive="active-route">
+                    <div>
+                        <fa-icon [icon]="iconHome"></fa-icon>
+                    </div>
+                </a>
+            </div>
+        </li>
+        <li>
+            <div class="list-container">
+                <a routerLink="about" routerLinkActive="active-route">
+                    <div>
+                        <fa-icon [icon]="iconAbout"></fa-icon>
+                    </div>
+                </a>
+            </div>
+        </li>
+        <li>
+            <div class="list-container">
+                <a routerLink="chat" routerLinkActive="active-route">
+                    <div>
+                        <fa-icon [icon]="iconChat"></fa-icon>
+                    </div>
+                </a>
+            </div>
+        </li>
+
+        <li>
+            <div>
+                 |
+            </div>
+        </li>
+
+        <li>
+            <div class="list-container">
+                <div class="profile-container">
+                    
+                    <!-- <img class="round-img" src="assets/chat/default_profile_picture.png" alt="profile picture"> -->
+                    <fa-icon [icon]="iconUser"></fa-icon>
+                    {{authService.currentUserSignal()?.username!.length < 8 ? authService.currentUserSignal()?.username :
+                    authService.currentUserSignal()?.username?.slice(0, 5) + "..." }}
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="list-container">
+                <a (click)="logOut()">
+                    <div>
+                        <fa-icon [icon]="iconSingOut"></fa-icon>
+                    </div>
+                </a>
+            </div>
+        </li>
+    </ul>
+</nav>
+}

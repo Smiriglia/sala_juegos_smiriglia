@@ -1,11 +1,12 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { FirestoreService } from './services/firestore.service';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive,],
+  imports: [RouterOutlet, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -19,6 +20,7 @@ export class AppComponent implements OnInit {
   authService = inject(AuthService);
   firestoreService = inject(FirestoreService);
   ngOnInit(): void {
+    
     this.authService.user$.subscribe(
       (user) => {
         if (user)
@@ -44,10 +46,5 @@ export class AppComponent implements OnInit {
 
   goTo(path: string) {
     this.router.navigate([path]);
-  }
-
-  logOut()
-  {
-    this.authService.logOut()
   }
 }

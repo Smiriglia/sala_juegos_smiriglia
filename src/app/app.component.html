@@ -1,23 +1,4 @@
 <!-- <button routerLink="home" routerLinkActive="active-route" >Bienvenido</button>
 <button routerLink="aboutng" routerLinkActive="active-route"  >About</button> -->
-@if(authService.currentUserSignal() != null)
-{
-<nav>
-  <ul>
-    <li>
-      <a routerLink="home" routerLinkActive="active-route">Home</a>
-    </li>
-    <li>
-      <a routerLink="about" routerLinkActive="active-route">About</a>
-    </li>
-    <li>
-      <a routerLink="chat" routerLinkActive="active-route">Chat</a>
-    </li>
-    <li>
-      <button (click)="logOut()" class="btn btn-dark">Log Out</button>
-    </li>
-  </ul>
-</nav>
-}
-
+<app-navbar></app-navbar>
 <router-outlet />
