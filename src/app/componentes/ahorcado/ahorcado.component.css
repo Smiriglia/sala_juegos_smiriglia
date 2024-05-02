@@ -1,0 +1,29 @@
+.view {
+    height: 1200px;
+}
+.keyboard-container {
+    display: inline-block;
+    width: 400px;
+    height: 150px;
+}
+
+img {
+    width: 100%;
+}
+
+.word {
+    display: inline;
+    font-size: 3rem;
+    color: white;
+}
+
+.attempts {
+    font-size: 1.5rem;
+    color: white;
+    font-family: Helvetica, sans-serif;
+}
+
+.game-info {
+    /* display: flex; */
+    align-items: center;
+}

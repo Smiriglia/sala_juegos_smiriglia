@@ -1,1 +1,39 @@
-<p>ahorcado works!</p>
+<div class="view">
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <img src={{getImg()}} alt="ahorcado">
+            </div>
+            <div class="col-7">
+                <div class="game-info">
+                    <p class="attempts"><fa-icon [icon]="attempt < 6 ? iconHeart : iconHeartBroken"></fa-icon> {{6 -
+                        attempt}}</p>
+                    <div>
+                        <div class="word">
+                            @for (letter of word; track $index) {
+                                @if (letter.hidden) {
+                                    _
+                                }
+                                @else {
+                                    {{letter.letter.toUpperCase()}}
+                                }
+                            }
+                        </div>
+                        <fa-icon [icon]="iconRefresh" (click)="getWord()"
+                            style="font-size: 40px; cursor: pointer;"></fa-icon>
+
+                    </div>
+                    <div [style]="getColorMsg()">{{mensaje}}</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="keyboard-container">
+                    <app-keyboard></app-keyboard>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

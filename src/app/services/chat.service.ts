@@ -33,7 +33,7 @@ export class ChatService {
   private getMessages() {
     let col = collection(this.firestore, 'chats');
 
-    const queryAll = query(col, orderBy('fecha', 'asc'))
+    const queryAll = query(col, orderBy('fecha', 'asc'));
 
     this.chatFire$ = collectionData(queryAll) as Observable<MessageInterface[]>;
 

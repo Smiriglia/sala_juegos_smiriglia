@@ -23,6 +23,7 @@ export class ChatComponent implements AfterViewChecked {
 
 
   ngAfterViewChecked(): void {
+    // this.ScrollToBottom();
     this.eventListener = this.ScrollToBottom.bind(this);
     document.addEventListener('scroll-chat', this.eventListener);
   }

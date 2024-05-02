@@ -39,8 +39,6 @@
         <li>
             <div class="list-container">
                 <div class="profile-container">
-                    
-                    <!-- <img class="round-img" src="assets/chat/default_profile_picture.png" alt="profile picture"> -->
                     <fa-icon [icon]="iconUser"></fa-icon>
                     {{authService.currentUserSignal()?.username!.length < 8 ? authService.currentUserSignal()?.username :
                     authService.currentUserSignal()?.username?.slice(0, 5) + "..." }}
