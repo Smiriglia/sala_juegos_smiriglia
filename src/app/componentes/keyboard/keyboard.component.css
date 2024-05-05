@@ -5,7 +5,7 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
-  background-color: #232424;
+  background-color: #23242491;
 }
 
 .line {
@@ -22,7 +22,7 @@
 
   box-shadow: 0px 3px 3px rgba(0, 0, 0, .7);
   color: #71D4FE;
-  background-color: #2F3336;
+  background-color: #2f3336a6;
   border-radius: 12px;
   text-shadow: 0px 0px 40px #71D4FE, 0px 0px 80px #71D4FE;
   text-align: center;

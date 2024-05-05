@@ -1,1 +1,51 @@
-<p>mayor-menor works!</p>
+<div class="view">
+    <div class="center-container info-container">
+        <div>
+            <fa-icon [icon]="iconScore"></fa-icon>
+            {{score}}
+        </div>
+        <div>
+            <fa-icon [icon]="iconRemaining"></fa-icon>
+            {{cardReq?.remaining}}/50
+        </div>
+        <div>
+            <fa-icon [icon]="iconHighestScore"></fa-icon>
+            {{highScore}}
+        </div>
+    </div>
+
+    <div class="center-container">
+        <!--   First Card -->
+        <div class="card-container">
+            <div id="prev-card" class="card">
+                <div class="front">
+                    <img src={{prevCard?.image}}>
+                </div>
+
+                <div class="back">
+                    <img src="assets/mayor_menor/card-back.png">
+                </div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div id="actual-card" class="card">
+                <div class="back">
+                    <img src="assets/mayor_menor/card-back.png">
+                </div>
+                <div class="front">
+                    <img src={{actualCard?.image}}>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center-container">
+        <div class="game-button">
+            <fa-icon [icon]="iconLower" (click)="chooseLower()" class="game-button"></fa-icon>
+            <!-- <button (click)="chooseLower()"><fa-icon [icon]="iconLower"></fa-icon> menor</button> -->
+        </div>
+        <div class="game-button">
+            <fa-icon [icon]="iconHigher" (click)="chooseHigher()" ></fa-icon>
+            <!-- <button (click)="chooseHigher()"><fa-icon [icon]="iconHigher"></fa-icon> mayor</button> -->
+        </div>
+    </div>
+</div>
