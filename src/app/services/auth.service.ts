@@ -31,7 +31,16 @@ export class AuthService {
       email,
       password,
     ).then(
-      res => updateProfile(res.user, { displayName: username })
+      res => {
+        updateProfile(res.user, { displayName: username })
+        .then(() => {
+          if (this.user$) {
+            this.currentUserSignal.set({email: email, username: username});
+            }
+          }
+        )
+        .catch(() => {});
+      }
     );
     return from(promise);
   }

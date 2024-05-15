@@ -43,7 +43,7 @@ export class ChatService {
         next: (messages) => {
           if (messages)
           {
-            this.messagesSignal.set(messages)
+            this.messagesSignal.set(messages);
             const event = new CustomEvent('scroll-chat');
             document.dispatchEvent(event);
           }

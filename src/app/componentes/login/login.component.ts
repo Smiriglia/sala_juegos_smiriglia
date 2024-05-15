@@ -50,32 +50,72 @@ export class LoginComponent {
     this.goTo("home");
   }
 
+  validateSingIn(email: string, password: string ) : boolean {
+    if (email == "") {
+      this.errorMessageIn = "Debes ingresar un email";
+      return false;
+    }
+    if (password == "") {
+      this.errorMessageIn = "Debes ingresar una contraseña";
+      return false;
+    }
+    return true;
+  }
+
+  validateSingUp(username:string ,email: string, password: string ) : boolean {
+    if (username == "") {
+      this.errorMessageUp = "Debes ingresar un nombre de usuario";
+      return false; 
+    }
+    
+    if (email == "") {
+      this.errorMessageUp = "Debes ingresar un email";
+      return false;
+    }
+    
+
+    if (password == "") {
+      this.errorMessageUp = "Debes ingresar una contraseña";
+      return false;
+    }
+    if (password.length <= 6) {
+      this.errorMessageUp = "la contraseña debe tener al menos 6 caracteres";
+      return false;
+    }
+
+    return true;
+  }
+
   singIn() {
     const { email, password } = this.usuarioSingIn;
-    this.authService.singIn(email, password).subscribe(
-      {
-        next: () => {
-          this.onSuccess();
-        },
-        error: (err) => {
-          this.errorMessageIn = err.code;
+    if (this.validateSingIn(email, password)) {
+      this.authService.singIn(email, password).subscribe(
+        {
+          next: () => {
+            this.onSuccess();
+          },
+          error: (err) => {
+            this.errorMessageIn = "Credenciales incorrectas";
+          }
         }
-      }
-    );
+      );
+    }
   }
 
   singUp() {
     const { username, email, password } = this.usuarioSingUp;
-    this.authService.singUp(username, email, password).subscribe(
-      {
-        next: () => {
-          this.onSuccess();
-        },
-        error: (err) => {
-          this.errorMessageUp = err.code;
+    if (this.validateSingUp(username, email, password)) {
+      this.authService.singUp(username, email, password).subscribe(
+        {
+          next: () => {
+            this.onSuccess();
+          },
+          error: (err) => {
+            this.errorMessageUp = "Datos invalidos";
+          }
         }
-      }
-    );
+      );
+    }
   }
 
   singInWithGoogle()

@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { DeckService } from '../../services/deck.service';
 import { Observable, takeUntil } from 'rxjs';
 import { CardInterface, CardRequestInterface, DeckInterface } from '../../interfaces/deck.interface';
-import { faStar, faTrophy, faInfoCircle, faChevronCircleRight, faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faTrophy, faInfoCircle, faChevronCircleRight, faChevronCircleLeft, faRefresh } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @Component({
   selector: 'app-mayor-menor',
@@ -31,6 +31,7 @@ export class MayorMenorComponent implements OnInit {
   iconRemaining = faInfoCircle;
   iconLower = faChevronCircleLeft;
   iconHigher = faChevronCircleRight;
+  iconReload = faRefresh;
 
 
 
@@ -47,6 +48,7 @@ export class MayorMenorComponent implements OnInit {
         next: (newDeck) => {
           this.score = 0;
           this.deck = newDeck;
+          this.hasEnded = false;
           this.deckService.getCards(newDeck.deck_id, 2).subscribe(
             {
               next: (newCardReq) => {

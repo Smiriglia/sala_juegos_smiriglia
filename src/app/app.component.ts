@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
         {
           this.authService.currentUserSignal.set({
             email: user.email!,
-            username: user.displayName!,
+            username: user.displayName ? user.displayName : "User" ,
           });
           this.firestoreService.RegisterLogin(user.email!);
           if(this.router.url == "/login")

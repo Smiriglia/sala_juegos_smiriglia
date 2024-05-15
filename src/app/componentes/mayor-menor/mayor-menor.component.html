@@ -13,39 +13,61 @@
             {{highScore}}
         </div>
     </div>
-
-    <div class="center-container">
-        <!--   First Card -->
-        <div class="card-container">
-            <div id="prev-card" class="card">
-                <div class="front">
-                    <img src={{prevCard?.image}}>
+    @if (hasEnded)
+    {
+        <div style="color: #fff; font-size: 20px;">
+            <p class="text-center">Has logrado {{score}} puntos, tu mejor puntaje es {{highScore}}.</p>
+            <hr />
+            <p class="text-center">
+                @if (score >= 51) {
+                    Felicidades, has logrado el puntaje mas alto.
+                }
+                @else {
+                    Te has quedado a {{51 - score}} del puntaje mas alto, vuelvelo a intentar.
+                }
+            </p>
+        </div>
+    }
+    @else 
+    {
+        <div class="center-container">
+            <!--   First Card -->
+            <div class="card-container">
+                <div id="prev-card" class="card">
+                    <div class="front">
+                        <img src={{prevCard?.image}}>
+                    </div>
+    
+                    <div class="back">
+                        <img src="assets/mayor_menor/card-back.png">
+                    </div>
                 </div>
-
-                <div class="back">
-                    <img src="assets/mayor_menor/card-back.png">
+            </div>
+            <div class="card-container">
+                <div id="actual-card" class="card">
+                    <div class="back">
+                        <img src="assets/mayor_menor/card-back.png">
+                    </div>
+                    <div class="front">
+                        <img src={{actualCard?.image}}>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="card-container">
-            <div id="actual-card" class="card">
-                <div class="back">
-                    <img src="assets/mayor_menor/card-back.png">
-                </div>
-                <div class="front">
-                    <img src={{actualCard?.image}}>
-                </div>
-            </div>
-        </div>
-    </div>
+    }
     <div class="center-container">
         <div class="game-button">
-            <fa-icon [icon]="iconLower" (click)="chooseLower()" class="game-button"></fa-icon>
+            <fa-icon [icon]="iconLower" (click)="chooseLower()"></fa-icon>
             <!-- <button (click)="chooseLower()"><fa-icon [icon]="iconLower"></fa-icon> menor</button> -->
         </div>
         <div class="game-button">
             <fa-icon [icon]="iconHigher" (click)="chooseHigher()" ></fa-icon>
             <!-- <button (click)="chooseHigher()"><fa-icon [icon]="iconHigher"></fa-icon> mayor</button> -->
+        </div>
+    </div>
+    <div class="center-container">
+        <div class="game-button" style="color: rgb(0, 0, 0);">
+            <fa-icon [icon]="iconReload" (click)="getDeck()" ></fa-icon>
         </div>
     </div>
 </div>
