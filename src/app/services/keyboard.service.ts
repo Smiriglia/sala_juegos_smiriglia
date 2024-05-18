@@ -6,13 +6,22 @@ import { Subject, Observable } from 'rxjs';
 })
 export class KeyboardService {
 
-  subject = new Subject<string>();
+  subjectKey = new Subject<string>();
+  subjectReset = new Subject<boolean>();
 
   sendKey(key: string) {
-    this.subject.next(key);
+    this.subjectKey.next(key);
+  }
+
+  sendReset(value: boolean) {
+    this.subjectReset.next(value)
   }
 
   getKeyObserver() : Observable<string> {
-    return this.subject.asObservable();
+    return this.subjectKey.asObservable();
+  }
+
+  getResetObserver() :  Observable<boolean> {
+    return this.subjectReset.asObservable();
   }
 }

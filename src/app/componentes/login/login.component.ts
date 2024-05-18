@@ -95,7 +95,17 @@ export class LoginComponent {
             this.onSuccess();
           },
           error: (err) => {
-            this.errorMessageIn = "Credenciales incorrectas";
+            switch(err.code)
+            {
+              case "auth/invalid-email":
+                this.errorMessageIn = 'El formato de correo es invalido';
+                break;
+              case "auth/operation-not-allowed":
+                this.errorMessageIn = "Operación no permitida"
+                break;
+              default:
+                this.errorMessageIn = 'El usuario o contraseña no son correctos'
+            }
           }
         }
       );
@@ -111,7 +121,20 @@ export class LoginComponent {
             this.onSuccess();
           },
           error: (err) => {
-            this.errorMessageUp = "Datos invalidos";
+            switch(err.code)
+            {
+              case "auth/email-already-in-use":
+                this.errorMessageUp = 'El correo ya está en uso';
+                break;
+              case "auth/invalid-email":
+                this.errorMessageUp = 'Correo electronico invalido';
+                break;
+              case "auth/operation-not-allowed":
+                this.errorMessageUp = "Operación no permitida"
+                break;
+              case "auth/weak-password":
+                this.errorMessageUp = "La contraseña debe tener al menos 6 caracteres"
+            }
           }
         }
       );

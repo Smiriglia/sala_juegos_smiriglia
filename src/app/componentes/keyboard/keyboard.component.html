@@ -11,7 +11,7 @@
     @for (line of [range(0,10), range(10,20), range(20, 27)]; track $index) {
         <div class="line {{$index}}">
             @for (i of line; track $index) {
-                <button (click)="sendKey(letras[i])" class="key">{{letras[i].toUpperCase()}}</button>
+                <button [disabled]="disabled.has(letras[i])" (click)="sendKey(letras[i])" class="key">{{letras[i].toUpperCase()}}</button>
             }
         </div>
     }

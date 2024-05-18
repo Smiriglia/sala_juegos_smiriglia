@@ -60,6 +60,7 @@ export class AhorcadoComponent {
         }
       }
     )
+    this.keyboardService.sendReset(true);
   }
 
   setWord(newWord: string) {

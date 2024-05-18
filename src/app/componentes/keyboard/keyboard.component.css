@@ -29,6 +29,9 @@
   border: none;
 }
 
+.key:disabled {
+  color: rgb(167, 0, 0);
+}
 
 
 .key:active {
