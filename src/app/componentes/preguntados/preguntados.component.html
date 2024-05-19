@@ -1,1 +1,50 @@
-<p>preguntados works!</p>
+
+<div class="view">
+    <div class="content text-center">
+        
+        @if (hasEnded) {
+            <div class="total-center end-info">
+                <div>
+                    <p>Has logrado {{score}} Puntos, puedes intentar superarlo volviendo a intentar</p>
+                    <button (click)="restart()">Volver a intentar</button>
+                </div>
+            </div>
+        }
+        @else {
+
+            @if (loadingInfo.question && loadingInfo.img) {
+                <div class="center-container game-info">
+                    <div>
+                        <fa-icon [icon]="lives > 0 ? iconHeart : iconHeartBroken"></fa-icon> 
+                        {{ lives }}
+                    </div>
+                    <div>
+                        <fa-icon [icon]="iconScore"></fa-icon>
+                        {{score}}
+                    </div>
+                </div>
+                <div class="question-img">
+                    <img [src]="imgUrl" alt="question image">
+                </div>
+                <div class="question">
+                    <p>{{question?.category}}</p>
+                    <p>{{question?.question}}</p>
+                </div>
+                <div class="answers">
+                    @for (answer of answers; track $index) {
+                        <button (click)="checkAnswer(answer.key)" [id]="answer.key" class="option-btn">{{ answer.value }}</button>
+                    }
+                </div>
+            
+                @if (answered) {
+                    <button (click)="nextQuestion()" id="btn-next">Siguiente</button>
+                }
+            }
+            @else {
+                <div class="total-center">
+                    <app-loader></app-loader>
+                </div>
+            }
+        }
+    </div>
+</div>

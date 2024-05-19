@@ -7,4 +7,5 @@ export const environment = {
         messagingSenderId: "157154662123",
         appId: "1:157154662123:web:fd2187666b6cb4ba4850ae"
     },
+    pexel_key: "rVSfEpNvX3VEojVMWhyNcTXwxxU2RORqlAQoigLzL0aziN3E8StO9LSr",
 };
