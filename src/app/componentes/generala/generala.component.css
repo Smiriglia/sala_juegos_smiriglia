@@ -1,0 +1,153 @@
+.dice {
+    width: 50px;
+    height: 50px;
+}
+
+.selectable {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 10px rgba(0, 255, 0, 0.629);
+}
+
+.selectable:hover {
+    scale: 0.9;
+}
+
+.selected {
+    box-shadow: 0px 0px 20px 15px rgba(255, 0, 0, 0.62) !important;
+}
+
+.chart-selected {
+    text-decoration: line-through;
+    background-color: rgba(186, 0, 0, 0.652);
+}
+
+.chart-selectable:hover {
+    text-decoration: line-through;
+    scale: 0.9;
+    background-color: gray;
+    color: #fff;
+    cursor: pointer;
+}
+
+.card-table {
+    width: 98%;
+    height: 700px;
+    background:radial-gradient(rgba(53,168,109,0.95) 0%, rgba(20,76,44,0.9) 64%,#784428 65%,#B78B5D 66%,#B7895A 67%,#835231 70%,#92623D 96%,#784428 99%,#B78B5D 100%);
+    border:3px solid #642;
+    margin:0 auto;
+    border-radius:50%;
+    padding:14% 10% 0 10%;
+    text-align:center;
+}
+
+.wrapper {
+    position:relative;
+    margin:0 auto;padding:1.2rem;
+    width: 520px;
+
+    background:var(--reversecolor);
+    color:var(--textcolor);
+    text-align:left;
+    background-image:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/358203/MedallionRugMedium.jpg");
+    background-size:100% 100%;
+}
+
+
+.chartGame  {
+    height: 200px;
+    overflow: auto;
+}
+
+.chartChoices {
+    height: 200px;
+    overflow: auto
+}
+
+.chartChoices::-webkit-scrollbar {
+    width: 10px;
+}
+
+.chartChoices::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #e7e7e7;
+    border: 1px solid #cacaca;
+}
+
+.chartChoices::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #d55959;
+}
+
+.chartGame::-webkit-scrollbar {
+    width: 10px;
+}
+
+.chartGame::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #e7e7e7;
+    border: 1px solid #cacaca;
+}
+
+.chartGame::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #59acd5;
+}
+
+.chartChoices button{
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(255, 80, 80);
+    margin-bottom: 15px;
+}
+
+.dices {
+    display: grid;
+    grid-template-columns: repeat(6, 25px); /* Three columns of 50px each */
+    grid-template-rows: repeat(2, 50px);    /* Two rows of 50px each */
+    justify-content: center;                /* Center the grid horizontally */
+    align-content: center;                  /* Center the grid vertically */
+    gap: 10px;                              /* Optional: add some space between the dice */
+    height: 130px;                          /* Set a fixed height to center vertically */
+}
+
+.dice {
+    grid-column: span 2;
+}
+
+/* Target the fourth and fifth dice to center them in the second row */
+.dices img:nth-child(4) {
+    grid-column: span 3;                    /* Span across all three columns */
+    justify-self: end;
+}
+
+.dices img:nth-child(5) {
+    grid-column: span 3;                    /* Span across all three columns */
+    justify-self: start;                   /* Center the dice within the spanned column */
+}
+
+.btn-roll {
+    width: 60px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: aliceblue;
+    border: solid 2px black;
+}
+
+.choices {
+    margin-top: 20px;
+}
+
+.end-info {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-retry{
+    background-color: rgb(155, 0, 0);
+    border-radius: 15px;
+    color: #fff;
+}

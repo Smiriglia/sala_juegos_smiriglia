@@ -48,6 +48,6 @@ export class PreguntadosService {
 
     getCorsProxiedUrl(url: string): string
     {
-        return `https://thingproxy.freeboard.io/fetch/${url}`;
+        return `https://web-production-a719.up.railway.app/${url}`;
     }
 }

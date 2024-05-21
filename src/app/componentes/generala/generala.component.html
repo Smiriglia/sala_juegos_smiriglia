@@ -1,1 +1,82 @@
-<p>generala works!</p>
+@if (authService.currentUserSignal())
+{
+    <div class="content ">
+        <div class="wrapper">
+            <div class="card-table">
+                @if (turn < 11) 
+                { 
+                    <div class="dices">
+                        @for (dice of dices; track $index)
+                        {
+                                <img [class.selectable]="rollCount > 0 && rollCount < 3" [class.selected]="isSelected($index) && rollCount < 3"
+                                    [id]="$index" class="dice" [src]="getImg(dice) " (click)="onDiceClick($index)" alt="dice">
+                            }
+                    </div>
+                    @if (rollCount < 3)
+                    {  
+                        <button class="btn-roll" [disabled]="rollCount > 0 && selected.size < 1" (click)="rollCount < 1 ? roll() : rollSelected()">
+                            <fa-icon [icon]="nextIcon"></fa-icon>
+                        </button>
+                    }
+                    <div class="choices row">
+                        <div class="chartChoices col-6">
+                            <div class="">
+                                @for (choice of choices; track $index) 
+                                {
+                                    <button (click)="chose(choice)">Anotar {{choice.value}} al -{{choice.name}}- </button>
+                                }
+                            </div>
+                        </div>
+                        <div class="chart chartGame col-6">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>-</th>
+                                        <th>{{authService.currentUserSignal()!.username}}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (item of getChart(); track $index) {
+                                    <tr (click)="cross('v' + item.key)"
+                                        [class.chart-selectable]="rollCount > 0 && item.key != 'Total' && item.value != null && item.value == 0"
+                                        [class.chart-selected]="item.value == null">
+                                        <td>{{item.key}}</td>
+                                        <td>{{item.value?? '-'}}</td>
+                                    </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                }
+                @else {
+                    <div class="end-info">
+                        <div class="chart">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>-</th>
+                                        <th>{{authService.currentUserSignal()!.username}}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (item of getChart(); track $index) {
+                                    <tr (click)="cross('v' + item.key)"
+                                        [class.chart-selectable]="rollCount > 0 && item.key != 'Total' && item.value != null && item.value == 0"
+                                        [class.chart-selected]="item.value == null">
+                                        <td>{{item.key}}</td>
+                                        <td>{{item.value?? '-'}}</td>
+                                    </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>Lograste {{chart.vTotal}} puntos, puedes intentar superarlo jugando denuevo</p>
+                        <button (click)="restart()" class="btn-retry">Volver a Intentar</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+}
